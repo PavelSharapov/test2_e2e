@@ -1,8 +1,6 @@
 'use strict';
 
 
-'use strict';
-
 /**
  * This file contains of header and footer objects
  * Objects of Welcome page (new user).
@@ -45,7 +43,6 @@ let LoginHelper = function () {
     );*!/
         browser.switchTo().alert().dismiss();*/
 
-//fwf
 
 
 };
