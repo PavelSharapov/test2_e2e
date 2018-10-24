@@ -42,7 +42,7 @@ let LoginHelper = function () {
         // function (err) { }
     );*!/
         browser.switchTo().alert().dismiss();*/
-
+//fswfdfdf
 
 };
 module.exports = LoginHelper;
