@@ -7,7 +7,7 @@
  * @constructor
  */
 const EC = protractor.ExpectedConditions;
-let HeaderFooterObj = require('../PageObgects/headerFooter.pageObject.js');
+let HeaderFooterObj = require('../PageObgects/headerFooter-pageObject.js');
 let LoginHelper = function () {
 
     /* Header section elements */
@@ -42,7 +42,7 @@ let LoginHelper = function () {
         // function (err) { }
     );*!/
         browser.switchTo().alert().dismiss();*/
-//fswfdfdf
+
 
 };
 module.exports = LoginHelper;

@@ -5,7 +5,7 @@
         /* Написать функциональные тесты:
 
                 0. Переход по всем разделам хедера
-                1. Нажатие на анимированную стрелку
+                1. Нажатие на анимированную стрелку +
                 2. Нажатие на стрелки слайдера (подумать, как затестить появляющийся блок)
                 3. Работа фильтров по типу игр
                 4. Работа фильтров по провайдеру
@@ -19,8 +19,8 @@
           */
 
 
-let HeaderFooterObjects = require('./PageObgects/headerFooter.pageObject.js');
-let GamePageObj = require('./PageObgects/games.pageObjects.js');
+let HeaderFooterObjects = require('./PageObgects/headerFooter-pageObject.js');
+let GamePageObj = require('./PageObgects/games-pageObjects.js');
 let LoginHelper = require('./Helpers/loginHelper');
 
 describe('Test of Games page items for unlogined user:', function () {
@@ -38,10 +38,11 @@ describe('Test of Games page items for unlogined user:', function () {
             games.arowClick();
             expect(browser.getCurrentUrl())
                 .toEqual('https://7bitcasino.com/en/bonus');
-
-        describe('Game filters section test:', function () {
+    });
+    describe('Game filters section test:', function () {
 
             it('should filtered hits games', function () {
+                hf.gamesButtonClick();
                 games.hitsButtonClick();
                 expect(browser.getCurrentUrl())
                     .toEqual('https://7bitcasino.com/en/games/hits');
@@ -70,7 +71,7 @@ describe('Test of Games page items for unlogined user:', function () {
 
 
         });
-});
+
 });
 
 

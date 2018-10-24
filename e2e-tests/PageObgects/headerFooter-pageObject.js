@@ -6,7 +6,9 @@
  * @constructor
  */
 const EC = protractor.ExpectedConditions;
+let GamesPage = require('./games-pageObjects.js');
 let HeaderFooterPageObjects = function () {
+    let gamesPage = new GamesPage();
 
                                             /* Header section elements */
 
@@ -35,7 +37,13 @@ let HeaderFooterPageObjects = function () {
 
     //далее описать ярлыки под линками(не первоочередное)
 
+                                                        /*  Actions block */
 
+ // get Games page
+    this.gamesButtonClick = function () {
+        browser.actions().click(this.gamesButton).perform();
+        browser.wait(EC.visibilityOf(gamesPage.slider),4000);
+    };
 
 
 
