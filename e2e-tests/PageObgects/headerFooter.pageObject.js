@@ -6,7 +6,7 @@
  * @constructor
  */
 const EC = protractor.ExpectedConditions;
-let HeaderFooterPageObject = function () {
+let HeaderFooterPageObjects = function () {
 
                                             /* Header section elements */
 
@@ -18,6 +18,7 @@ let HeaderFooterPageObject = function () {
     this.loginButton = $('[translate="frontend.links.sign_in"]');
     this.signUpButton =$('[translate="frontend.links.sign_up"]');
     this.localeSwitcher = $('.opener.btn.btn-success.btn-flat');
+    this.oneSignalAlert = $('');
 
                                             /* Footer section elements */
 
@@ -37,26 +38,7 @@ let HeaderFooterPageObject = function () {
 
 
 
-                                                  /*  Actions block */
-    /**
-     * Get Main page
-     */
-    this.get = function () {
-
-        browser.ignoreSynchronization = true;
-        browser.driver.manage().window().maximize();
-        browser.driver.get(browser.baseUrl);
-        this.waitForWelcomePageDownload();
-
-    };
-    /**
-     * Wait for Welcome page is download
-     */
-    this.waitForWelcomePageDownload = function () {
-        browser.wait(EC.visibilityOf(this.headerLogo),6000);
-    };
-
 
 };
 
-module.exports = HeaderFooterPageObject;
+module.exports = HeaderFooterPageObjects;

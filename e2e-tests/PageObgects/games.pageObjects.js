@@ -3,12 +3,12 @@
 // this file contains of objects for Games page
 
 const EC = protractor.ExpectedConditions;
-let HeaderFooterObj = require('headerFooter.pageObject.js');
-let GamesPageObj = function () {
+// let HeaderFooterPageObjects = require('./headerFooter.pageObject');
+let GamesPageObjects = function () {
 
                                         /* Header section elements */
 
-    let hederFooter = new HeaderFooterObj();
+     // let headerFooter = new HeaderFooterPageObjects();
 
                                         /* Slider section elements */
 
@@ -79,11 +79,46 @@ let GamesPageObj = function () {
     this.gamePrewiew14 = $$('.games__content__rightbar .image-link').get(13);
     this.gamePrewiew15 = $$('.games__content__rightbar .image-link').get(14);
     this.showMoreGamesButton = $('[translate="common.show_more_games"]');
+    this.bigBonusImage = $('.big-bonus-img');
+    // this.bonusesPageHeader = $('[translate="promo-page.heading"]');
+
+
+                                                    /*  Actions block */
 
 
 
-
-
+   //   Click an animated arrow
+    this.arowClick = function () {
+        browser.actions().click(this.animatedArrow).perform();
+        browser.wait(EC.visibilityOf(this.bigBonusImage),1000);
+        // browser.wait(EC.visibilityOf(this.bonusesPageHeader),1000);
+    };
+    // Click on the Hits button
+     this.hitsButtonClick = function () {
+         browser.actions().click(this.hitsButton).perform();
+     };
+    // Click on the Slots button
+    this.slotsButtonClick = function () {
+        browser.actions().click(this.slotsButton).perform();
+    };
+    // Click on the Jackpot games button
+    this.jackpotGamesButtonClick = function () {
+        browser.actions().click(this.jackpotGamesButton).perform();
+    };
+    // Click on the Live button
+    this.liveButtonClick = function () {
+        browser.actions().click(this.liveButton).perform();
+    };
+    // Click on the Live button
+    this.liveButtonClick = function () {
+        browser.actions().click(this.liveButton).perform();
+    };
+    // Click on the Table button
+    this.tableButtonClick = function () {
+        browser.actions().click(this.tableButton).perform();
+    };
 
 
 };
+
+module.exports = GamesPageObjects;

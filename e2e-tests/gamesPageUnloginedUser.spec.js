@@ -3,6 +3,8 @@
 /* This spec contains of functional tests of Games page for unlogined user */
 
         /* Написать функциональные тесты:
+
+                0. Переход по всем разделам хедера
                 1. Нажатие на анимированную стрелку
                 2. Нажатие на стрелки слайдера (подумать, как затестить появляющийся блок)
                 3. Работа фильтров по типу игр
@@ -17,22 +19,64 @@
           */
 
 
-let HeaderFooterObj = require('./PageObgects/headerFooter.pageObject.js');
+let HeaderFooterObjects = require('./PageObgects/headerFooter.pageObject.js');
+let GamePageObj = require('./PageObgects/games.pageObjects.js');
+let LoginHelper = require('./Helpers/loginHelper');
 
-describe('Test for unlogined user', function () {
-    let hf = new HeaderFooterObj();
+describe('Test of Games page items for unlogined user:', function () {
+    let hf = new HeaderFooterObjects();
+    let games = new GamePageObj();
+    let login = new LoginHelper();
+    login.getGamesPage();
+    it('should download allGames page ', function () {
 
-    it('should present Games element', function () {
-
-        hf.get();
-        // let gamesButton = $('[translate="frontend.links.casino_games"]');
-        expect(hf.gamesButton.isDisplayed()).toBe(false);
-
+        expect(games.slider.isDisplayed()).toBe(true);
+        expect(browser.getCurrentUrl())
+            .toEqual('https://7bitcasino.com/en/games/allGames');
     });
+    it('when press on animated arrow should redirect to /Bonuses page', function () {
+            games.arowClick();
+            expect(browser.getCurrentUrl())
+                .toEqual('https://7bitcasino.com/en/bonus');
+
+        describe('Game filters section test:', function () {
+
+            it('should filtered hits games', function () {
+                games.hitsButtonClick();
+                expect(browser.getCurrentUrl())
+                    .toEqual('https://7bitcasino.com/en/games/hits');
+            });
+            it('should filtered slots games', function () {
+                games.slotsButtonClick();
+                expect(browser.getCurrentUrl())
+                    .toEqual('https://7bitcasino.com/en/games/slots');
+            });
+            it('should filtered jackpot games', function () {
+                games.jackpotGamesButtonClick();
+                expect(browser.getCurrentUrl())
+                    .toEqual('https://7bitcasino.com/en/games/jackpot');
+            });
+            it('should filtered live games', function () {
+                games.liveButtonClick();
+                expect(browser.getCurrentUrl())
+                    .toEqual('https://7bitcasino.com/en/games/live')
+            });
+            it('should filtered table games', function () {
+                games.tableButtonClick();
+                expect(browser.getCurrentUrl())
+                    .toEqual('https://7bitcasino.com/en/games/table')
+            });
 
 
 
-
-
-
+        });
 });
+});
+
+
+
+
+
+
+
+

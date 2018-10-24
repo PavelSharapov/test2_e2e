@@ -4,8 +4,8 @@ exports.config = {
     framework: 'jasmine2',
     seleniumAddress: 'http://localhost:4444/wd/hub',
     specs: [
-        '*.js',
-        // './gamesPageUnloginedUser.spec.js'
+        // '*.js',
+         './gamesPageUnloginedUser.spec.js'
 
     ],
     capabilities: {
@@ -14,8 +14,12 @@ exports.config = {
             'args': [
                 'disable-infobars=true', // disable "chrome is being controlled by automated software"
                 // 'disable-dev-shm-usage', // fix 199 error of webdriver
-                'no-sandbox'             // fix 199 error of webdriver
-            ]
+                'no-sandbox',            // fix 199 error of webdriver
+                // 'autoDismissAlerts = true',
+                "--disable-notifications "
+
+            ],
+
         },
         /*
             * Set browser language (menus & so on)
