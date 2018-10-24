@@ -43,7 +43,6 @@ let LoginHelper = function () {
     );*!/
         browser.switchTo().alert().dismiss();*/
 
-//dsafasrfwqerfweqrfdwqerfwqe
 
 };
 module.exports = LoginHelper;
