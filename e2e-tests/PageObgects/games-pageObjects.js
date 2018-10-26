@@ -60,6 +60,8 @@ let GamesPageObjects = function () {
                                             /* Body games section elements */
 
     this.gamePrewiew1 = $$('.games__content__rightbar .image-link').get(0);
+    this.gamePreviewTitle1 = $$('.games__content__rightbar .game-title.ng-binding').get(0);
+    this.gamePreviewProviderTitle1 = $$('.games__content__rightbar .game-provider.ng-binding').get(0);
     this.gamePrewiew2 = $$('.games__content__rightbar .image-link').get(1);
     this.gamePrewiew3 = $$('.games__content__rightbar .image-link').get(2);
     this.gamePrewiew4 = $$('.games__content__rightbar .image-link').get(3);
@@ -81,6 +83,7 @@ let GamesPageObjects = function () {
     this.showMoreGamesButton = $('[translate="common.show_more_games"]');
     this.bigBonusImage = $('.big-bonus-img');
     // this.bonusesPageHeader = $('[translate="promo-page.heading"]');
+    this.noGamesBlock = $('.nogames .nogames-heading ');
 
 
                                                     /*  Actions block */
@@ -92,6 +95,10 @@ let GamesPageObjects = function () {
         browser.actions().click(this.animatedArrow).perform();
         browser.wait(EC.visibilityOf(this.bigBonusImage),1000);
         // browser.wait(EC.visibilityOf(this.bonusesPageHeader),1000);
+    };
+    // Click on the All games button
+    this.allGamesButtonClick = function () {
+        browser.actions().click(this.allGamesButton).perform();
     };
     // Click on the Hits button
      this.hitsButtonClick = function () {
@@ -117,6 +124,87 @@ let GamesPageObjects = function () {
     this.tableButtonClick = function () {
         browser.actions().click(this.tableButton).perform();
     };
+    //Enter name of game in search input
+    this.enterGameName = function (gameName) {
+        this.gamesSearchInput.sendKeys(gameName);
+        browser.wait(EC.visibilityOf(this.gamePreviewTitle1),2000);
+    };
+    //Quickfire filter activate
+    this.quickfireButtonClick = function () {
+        browser.actions().click(this.quickfireButton).perform();
+        browser.wait(EC.visibilityOf(this.gamePreviewProviderTitle1),2000);
+    };
+    //Amatic filter activate
+    this.amaticButtonClick = function () {
+        browser.actions().click(this.amaticButton).perform();
+        browser.wait(EC.visibilityOf(this.gamePreviewProviderTitle1),2000);
+    };
+    //Betsoft filter activate
+    this.betsoftButtonClick = function () {
+        browser.actions().click(this.betsoftButton).perform();
+        browser.wait(EC.visibilityOf(this.gamePreviewProviderTitle1),2000);
+    };
+    //Bgaming filter activate
+    this.bgamingButtonClick = function () {
+        browser.actions().click(this.bgamingButton).perform();
+        browser.wait(EC.visibilityOf(this.gamePreviewProviderTitle1),2000);
+    };
+    //Ezugi filter activate
+    this.ezugiButtonClick = function () {
+        browser.actions().click(this.ezugiButton).perform();
+        browser.wait(EC.visibilityOf(this.gamePreviewProviderTitle1),2000);
+    };
+    //Endorphina filter activate
+    this.endorphinaButtonClick = function () {
+        browser.actions().click(this.endorphinaButton).perform();
+        browser.wait(EC.visibilityOf(this.gamePreviewProviderTitle1),2000);
+    };
+    //Isoftbet filter activate
+    this.isoftbetButtonClick = function () {
+        browser.actions().click(this.isoftbetButton).perform();
+        browser.wait(EC.visibilityOf(this.gamePreviewProviderTitle1),2000);
+    };
+    //Habanero filter activate
+    this.habaneroButtonClick = function () {
+        browser.actions().click(this.habaneroButton).perform();
+        browser.wait(EC.visibilityOf(this.gamePreviewProviderTitle1),2000);
+    };
+    //Gameart filter activate
+    this.gameartButtonClick = function () {
+        browser.actions().click(this.gameartButton).perform();
+        browser.wait(EC.visibilityOf(this.gamePreviewProviderTitle1),2000);
+    };
+    //MRSlotty filter activate
+    this.mrslottyButtonClick = function () {
+        browser.actions().click(this.mrslottyButton).perform();
+        browser.wait(EC.visibilityOf(this.gamePreviewProviderTitle1),2000);
+    };
+    //Belatra filter activate
+    this.belatraButtonClick = function () {
+        browser.actions().click(this.belatraButton).perform();
+        browser.wait(EC.visibilityOf(this.gamePreviewProviderTitle1),2000);
+    };
+    //Playngo filter activate
+    this.playngoButtonClick = function () {
+        browser.actions().click(this.playngoButton).perform();
+        browser.wait(EC.visibilityOf(this.gamePreviewProviderTitle1),2000);
+    };
+    //Thunderkick filter activate
+    this.thunderkickButtonClick = function () {
+        browser.actions().click(this.thunderkickButton).perform();
+        browser.wait(EC.visibilityOf(this.noGamesBlock),2000);
+    };
+    //Pragmatic filter activate
+    this.pragmaticButtonClick = function () {
+        browser.actions().click(this.pragmaticButton).perform();
+        browser.wait(EC.visibilityOf(this.noGamesBlock),2000);
+    };
+    //Yggdrasil filter activate
+    this.yggdrasilButtonClick = function () {
+        browser.actions().click(this.yggdrasilButton).perform();
+        browser.wait(EC.visibilityOf(this.gamePreviewProviderTitle1),2000);
+    };
+
 
 
 };
