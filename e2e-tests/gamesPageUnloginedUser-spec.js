@@ -35,12 +35,12 @@ describe('Test of Games page items for unlogined user:', function () {
         expect(browser.getCurrentUrl())
             .toEqual('https://7bitcasino.com/en/games/allGames');
     });
-    it('when press on animated arrow should redirect to /Bonuses page', function () {
+  /*  it('when press on animated arrow should redirect to /Bonuses page', function () {
             games.arowClick();
             expect(browser.getCurrentUrl())
                 .toEqual('https://7bitcasino.com/en/bonus');
-    });
-    describe('Game filters section test:', function () {
+    });*/
+    /*describe('Game filters section test:', function () {
 
             it('should filtered hits games', function () {
                 hf.gamesButtonClick();
@@ -207,6 +207,17 @@ describe('Test of Games page items for unlogined user:', function () {
             games.gamePreviewProviderTitle1.getText().then(function (text) {
                 console.log('15 provider filter is: ' + text);
             });
+        });
+    });*/
+    describe('Jackpot section test', function () {
+        it('should work sign up button in jackpot section', function () {
+            games.jackpotSignUpButtonClick();
+            expect(games.signUpPopup.isDisplayed()).toBe(true);
+            games.signUpPopupCLose();
+        });
+        it('should opened Jackpot game', function () {
+            games.jacpotGameClick();
+            expect(games.openedJackpotGameFrame.isDisplayed()).toBe(true);
         });
     });
 

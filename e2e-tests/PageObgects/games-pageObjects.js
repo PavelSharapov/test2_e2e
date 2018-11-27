@@ -23,7 +23,7 @@ let GamesPageObjects = function () {
     this.hitsButton = $$('#games-collections .radiomenu__item').get(0);
     this.allGamesButton = $$('#games-collections .radiomenu__item').get(1);
     this.slotsButton = $$('#games-collections .radiomenu__item').get(2);
-    this.jackpotGamesButton = $$('#games-collections .radiomenu__item').get(3);
+    this.jackpotFilterGamesButton = $$('#games-collections .radiomenu__item').get(3);
     this.liveButton = $$('#games-collections .radiomenu__item').get(4);
     this.tableButton = $$('#games-collections .radiomenu__item').get(5);
 
@@ -48,8 +48,10 @@ let GamesPageObjects = function () {
 
                                             /* Body leftbar section elements */
 
-    this.jackpotBlock = $('.gradient-box');
-    this.jackpotBlockSignUpButton = $('.under__heading__inner [translate="frontend.links.sign_up"]');
+    this.jackpotGameButton = $('.gradient-box.ng-scope');
+
+    // this.jackpotBlockSignUpButton = $('.under__heading__inner [translate="frontend.links.sign_up"]');
+    this.jackpotBlockSignUpButton = $('#games-panel-list > div > div.games > div.wrap.wrap__games.ng-scope > div > div.games__content__leftbar > div.games__content__leftbar--upper > div.under__heading > div > a');
     this.winningNowLine1 = $$('.winner-animation').get(2);
     this.winningNowLine2 = $$('.winner-animation').get(3);
     this.winningNowLine3 = $$('.winner-animation').get(4);
@@ -84,6 +86,14 @@ let GamesPageObjects = function () {
     this.bigBonusImage = $('.big-bonus-img');
     // this.bonusesPageHeader = $('[translate="promo-page.heading"]');
     this.noGamesBlock = $('.nogames .nogames-heading ');
+    // this.openedJackpotGameFrame = $('.game-box-inner');
+    this.openedJackpotGameFrame = $('#a8r_iframe');
+    this.openedJackpotGameFrameCloseButton = $('.game-close');
+
+                                                 /* Sign up popup section elements */
+    this.signUpPopup = $('.sign-up-modal');
+    this.signUpPopupCloseButton = $('[ng-click="mainModal.close()"]');
+
 
 
                                                     /*  Actions block */
@@ -96,7 +106,11 @@ let GamesPageObjects = function () {
         browser.wait(EC.visibilityOf(this.bigBonusImage),1000);
         // browser.wait(EC.visibilityOf(this.bonusesPageHeader),1000);
     };
-    // Click on the All games button
+
+                                                /*  Games filters actions */
+
+
+    // Click the All games button
     this.allGamesButtonClick = function () {
         browser.actions().click(this.allGamesButton).perform();
     };
@@ -110,7 +124,7 @@ let GamesPageObjects = function () {
     };
     // Click on the Jackpot games button
     this.jackpotGamesButtonClick = function () {
-        browser.actions().click(this.jackpotGamesButton).perform();
+        browser.actions().click(this.jackpotFilterGamesButton).perform();
     };
     // Click on the Live button
     this.liveButtonClick = function () {
@@ -124,6 +138,10 @@ let GamesPageObjects = function () {
     this.tableButtonClick = function () {
         browser.actions().click(this.tableButton).perform();
     };
+
+                                              /*  Provider filters actions */
+
+
     //Enter name of game in search input
     this.enterGameName = function (gameName) {
         this.gamesSearchInput.sendKeys(gameName);
@@ -203,6 +221,26 @@ let GamesPageObjects = function () {
     this.yggdrasilButtonClick = function () {
         browser.actions().click(this.yggdrasilButton).perform();
         browser.wait(EC.visibilityOf(this.gamePreviewProviderTitle1),2000);
+    };
+
+                                                    /*  Jackpot section actions */
+
+    //Jackpot section Sign up button click
+
+    this.jackpotSignUpButtonClick = function () {
+        browser.executeScript("arguments[0].scrollIntoView();",this.jackpotBlockSignUpButton.getWebElement());
+        browser.actions().click(this.jackpotBlockSignUpButton).perform();
+        browser.wait(EC.visibilityOf(this.signUpPopup),2000);
+    };
+    this.signUpPopupCLose = function () {
+        browser.actions().click(this.signUpPopupCloseButton).perform();
+    };
+    //Jackpot game click
+
+    this.jacpotGameClick = function () {
+        browser.actions().click(this.jackpotGameButton).perform();
+        browser.wait(EC.visibilityOf(this.openedJackpotGameFrame),8000)
+        browser.actions().click(this.openedJackpotGameFrameCloseButton).perform();
     };
 
 
