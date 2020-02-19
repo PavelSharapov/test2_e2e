@@ -1,4 +1,4 @@
-//jshint strict: false
+//jshint strict: falseffff
 exports.config = {
 
     framework: 'jasmine2',
