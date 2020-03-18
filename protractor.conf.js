@@ -5,7 +5,8 @@ exports.config = {
     seleniumAddress: 'http://localhost:4444/wd/hub',
     specs: [
         // '*.js',
-         './gamesPageUnloginedUser-spec.js'
+        //  './gamesPageUnloginedUser-spec.js'
+        './e2e-tests/welcomePageElementsPresent-spec.js'
 
     ],
     capabilities: {

@@ -3,8 +3,8 @@
 /* This spec contains of functional tests of Welcome page for unlogined user */
 
 
-let HeaderFooterPageObjects = require('./PageObgects/headerFooter-pageObject.js');
-
+let HeaderFooterPageObjects = require('./PageObgects/headerFooter-pageObjects.js');
+let WelcomePage = require('./PageObgects/welcomePage-objects.js');
 
 describe('Welcome page sections.', function () {
     let welcomePage = new WelcomePage();
@@ -15,8 +15,8 @@ describe('Welcome page sections.', function () {
         expect(browser.getCurrentUrl()).toEqual(browser.baseUrl);
     });
     describe('Header section: ', function () {
-        it('should displayed Pravda logo in header', function () {
-            expect(headerFooter.headerLogoPravda.isDisplayed()).toBe(true);
+        it('should displayed User info', function () {
+            expect(headerFooter.userInfo.isDisplayed()).toBe(true);
         });
 //         it('should present "Base url" link at Pravda logo in header ', function () {
 //             expect(headerFooter.headerLogoPravda.getAttribute('href'))

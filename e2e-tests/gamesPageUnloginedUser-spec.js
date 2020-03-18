@@ -20,7 +20,7 @@
           */
 
 
-let HeaderFooterObjects = require('./PageObgects/headerFooter-pageObject.js');
+let HeaderFooterObjects = require('./PageObgects/headerFooter-pageObjects.js');
 let GamePageObj = require('./PageObgects/games-pageObjects.js');
 let LoginHelper = require('./Helpers/loginHelper');
 

@@ -7,7 +7,7 @@
  * @constructor
  */
 const EC = protractor.ExpectedConditions;
-let HeaderFooterObj = require('../PageObgects/headerFooter-pageObject.js');
+let HeaderFooterObj = require('../PageObgects/headerFooter-pageObjects.js');
 let LoginHelper = function () {
 
     /* Header section elements */
