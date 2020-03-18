@@ -26,7 +26,7 @@ describe('Welcome page sections.', function () {
              });
         it('should displayed header Game menu ', function () {
             headerFooter.headerMenuGameButton.getText().then(function (text) {
-                console.log('ballance = ' + text);
+                console.log(text);
             });
         });
 

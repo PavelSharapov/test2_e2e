@@ -106,7 +106,7 @@ let WelcomePage = function () {
      * Wait for Welcome page is download
      */
     this.waitForWelcomePageDownload = function () {
-        browser.wait(EC.visibilityOf(headerFooter.userInfo),6000)
+        browser.wait(EC.visibilityOf(headerFooter.userInfo),10000)
     };
     // /**
     //  * Jump to the footer

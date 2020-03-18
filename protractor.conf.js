@@ -16,8 +16,8 @@ exports.config = {
             'args': [
                 // 'disable-dev-shm-usage', // fix 199 error of webdriver
                 'no-sandbox',            // fix 199 error of webdriver
-                // 'autoDismissAlerts = true',
-                "--disable-notifications "
+                // // 'autoDismissAlerts = true',
+                // "--disable-notifications "
 
 
             ],
