@@ -27,7 +27,14 @@ let HeaderFooterPageObjects = function () {
 
                                             /* Header bottom section elements */
 
-    this.headerMenuGameButton = $$('.header-menu .main-menu ').get(0);
+    this.headerGameButton = $$('.header-menu .main-menu li ').get(0);
+    this.headerVirtualSportButton = $$('.header-menu .main-menu li ').get(1);
+    this.headerSportButton = $$('.header-menu .main-menu li ').get(2);
+    this.headerSupportButton = $$('.header-menu .main-menu li ').get(3);
+    this.headerFaqButton = $$('.header-menu .main-menu li ').get(4);
+    this.headerJackpotButton = $$('.header-menu .main-menu li ').get(5);
+    this.headerLogoutButton = $$('.header-menu .main-menu li ').get(6);
+    this.headerSearchInput = $('#search-games-input');
 
 
     // this.gamesButton = $('[translate="frontend.links.casino_games"]');

@@ -14,21 +14,32 @@ describe('Welcome page sections.', function () {
         welcomePage.get();
         expect(browser.getCurrentUrl()).toEqual(browser.baseUrl);
     });
-    describe('Header section: ', function () {
+    describe('Header top section: ', function () {
         it('should displayed User name', function () {
             expect(headerFooter.userInfo.isDisplayed()).toBe(true);
         });
         it('should displayed User balance', function () {
             expect(headerFooter.userBalance.isDisplayed()).toBe(true);
-            headerFooter.userBalance.getText().then(function (text) {
-                console.log('ballance = ' + text);
-                    });
-             });
-        it('should displayed header Game menu ', function () {
-            headerFooter.headerMenuGameButton.getText().then(function (text) {
-                console.log(text);
+            // headerFooter.userBalance.getText().then(function (text) {
+            //     console.log('ballance = ' + text);
+            //         });
+        });
+        it('should display user icon', function () {
+            expect(headerFooter.userIcon.isDisplayed()).toBe(true);
+        });
+    describe('Header bottom section: ', function () {
+        it('should displayed Game menu', function () {
+            expect(headerFooter.headerGameButton.isDisplayed()).toBe(true);
             });
         });
+// дописать тесты хедера
+
+
+        // it('should displayed header Game menu ', function () {
+        //     headerFooter.headerMenuGameButton.getText().then(function (text) {
+        //         console.log(text);
+        //     });
+        // });
 
 
 //
