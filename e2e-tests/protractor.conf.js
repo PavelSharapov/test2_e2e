@@ -32,7 +32,7 @@ exports.config = {
            }
        }*/
     },
-    baseUrl: 'https://7bitcasino.com/',
+    baseUrl: 'https://casinomacao.bet/',
     allScriptsTimeout: 8000,
     getPageTimeout: 10000,
     jasmineNodeOpts: {
