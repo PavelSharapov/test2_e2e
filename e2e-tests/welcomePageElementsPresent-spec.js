@@ -15,9 +15,35 @@ describe('Welcome page sections.', function () {
         expect(browser.getCurrentUrl()).toEqual(browser.baseUrl);
     });
     describe('Header section: ', function () {
-        it('should displayed User info', function () {
+        it('should displayed User name', function () {
             expect(headerFooter.userInfo.isDisplayed()).toBe(true);
         });
+        it('should displayed User balance', function () {
+            expect(headerFooter.userBalance.isDisplayed()).toBe(true);
+            headerFooter.userBalance.getText().then(function (text) {
+                console.log('ballance = ' + text);
+                    });
+             });
+        it('should displayed header Game menu ', function () {
+            headerFooter.headerMenuGameButton.getText().then(function (text) {
+                console.log('ballance = ' + text);
+            });
+        });
+
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //         it('should present "Base url" link at Pravda logo in header ', function () {
 //             expect(headerFooter.headerLogoPravda.getAttribute('href'))
 //                 .toEqual(browser.baseUrl);

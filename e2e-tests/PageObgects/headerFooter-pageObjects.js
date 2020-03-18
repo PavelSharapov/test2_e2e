@@ -17,11 +17,17 @@ let HeaderFooterPageObjects = function () {
 // let HeaderFooterPageObjects = function () {
 //     let gamesPage = new GamesPage();
 
-                                            /* Header section elements */
+                                            /* Header top section elements */
 
-    this.userInfo = $('.profile-info .block-user');
+    this.userInfo = $('.profile-info .user-name');
+    this.userBalance = $('.profile-info .block-count');
+    this.userIcon = $('.icon.icon-user-ico');
+    this.logInSignInButton = $('.header-auth .btn.btn-vl.bounce');
 
 
+                                            /* Header bottom section elements */
+
+    this.headerMenuGameButton = $$('.header-menu .main-menu ').get(0);
 
 
     // this.gamesButton = $('[translate="frontend.links.casino_games"]');
