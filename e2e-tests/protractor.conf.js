@@ -11,12 +11,13 @@ exports.config = {
     capabilities: {
         browserName: 'chrome',
         chromeOptions: {
+            'excludeSwitches': ['enable-automation'], // disable-infobars "chrome is being controlled by automated software"
             'args': [
-                'disable-infobars=true', // disable "chrome is being controlled by automated software"
                 // 'disable-dev-shm-usage', // fix 199 error of webdriver
                 'no-sandbox',            // fix 199 error of webdriver
                 // 'autoDismissAlerts = true',
                 "--disable-notifications "
+
 
             ],
 
