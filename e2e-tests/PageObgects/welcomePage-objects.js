@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Objects of Welcome page (new user).
+ * Objects of Welcome page (guest user).
  * @constructor
  */
 
@@ -15,14 +15,56 @@ let WelcomePage = function () {
     let headerFooter = new HeaderFooterPageObjects();
 
 
-    //
-    //
-    // /**
-    //  *  Welcome landing section
-    //  */
-    //
-    //
-    //
+
+
+                            /*  Welcome page hero section: Jackpot */
+
+
+    this.heroBlock = $('.hero');
+    this.jackpotBlockTitle = $$('.hero .block-title').get(0);
+    this.jackpotDiamondName = $('.jackpot-link.first .jackpot-name');
+    this.jackpotDiamondAmounth = $('.jackpot-link.first .money__amount__counter');
+    this.jackpotGoldName = $('.jackpot-link.second .jackpot-name');
+    this.jackpotGoldAmounth = $('.jackpot-link.second .money__amount__counter');
+    this.jackpotSilverName = $('.jackpot-link.third .jackpot-name');
+    this.jackpotSilverAmounth = $('.jackpot-link.third .money__amount__counter');
+    this.jackpotBronzeName = $('.jackpot-link.fourth .jackpot-name');
+    this.jackpotBronzeAmounth = $('.jackpot-link.fourth .money__amount__counter');
+
+
+                            /*  Welcome page hero section: Slider */
+
+
+    this.slidersSection = $('.slick-list');
+    this.sliderSlide1 = $$('.slick-list .slider_slide [src="/images/banners/jackpot/banner.svg"]').get(0);
+    this.sliderSlide2 = $$('.slick-list .slider_slide [src="/images/slider/815x374_1.jpg"]').get(0);
+    this.sliderSlide3 = $$('.slick-list .slider_slide [src="/images/slider/815x374_3.jpg"]').get(0);
+    this.sliderSlide4 = $$('.slick-list .slider_slide [src="/images/slider/815x374_4.jpg"]').get(0);
+    this.sliderDot1 = $$('.slider li button').get(0);
+    this.sliderDot2 = $$('.slider li button').get(1);
+    this.sliderDot3 = $$('.slider li button').get(2);
+    this.sliderDot4 = $$('.slider li button').get(3);
+    this.blockWinnersTitle = $('.block--winners .block-title div');
+    this.blockWinnersLatestItem = $$('.block--winners .block--winners-tabs_item').get(0);
+    this.blockWinnersTopItem = $$('.block--winners .block--winners-tabs_item').get(1);
+    this.blockWinnersItemWinner1 = $$('.block--winners .winner-list__item winner').get(0);
+    this.blockWinnersItemWinner2 = $$('.block--winners .winner-list__item winner').get(1);
+    this.blockWinnersItemWinner3 = $$('.block--winners .winner-list__item winner').get(2);
+    this.blockWinnersItemWinner4 = $$('.block--winners .winner-list__item winner').get(3);
+    this.blockWinnersItemWinner5 = $$('.block--winners .winner-list__item winner').get(4);
+    this.blockWinnersItemWinner6 = $$('.block--winners .winner-list__item winner').get(5);
+
+
+
+                            /*  Welcome page hero section: Games menu */
+
+// Доописать объекты меню
+// Доописать объекты превью игр
+
+
+
+
+
     //
     //
     // this.welcomeBlock = $('.welcome-block');

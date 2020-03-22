@@ -2,7 +2,6 @@
 
 /**
  * This file contains of header and footer objects
- * Objects of Welcome page (new user).
  * @constructor
  */
 const EC = protractor.ExpectedConditions;
@@ -17,7 +16,7 @@ let HeaderFooterPageObjects = function () {
 // let HeaderFooterPageObjects = function () {
 //     let gamesPage = new GamesPage();
 
-                                            /* Header top section elements */
+                                            /* Header top-line elements */
 
     this.userInfo = $('.profile-info .user-name');
     this.userBalance = $('.profile-info .block-count');
@@ -25,7 +24,7 @@ let HeaderFooterPageObjects = function () {
     this.logInSignInButton = $('.header-auth .btn.btn-vl.bounce');
 
 
-                                            /* Header bottom section elements */
+                                            /* Header bottom-line section elements */
 
     this.headerGameButton = $$('.header-menu .main-menu li ').get(0);
     this.headerVirtualSportButton = $$('.header-menu .main-menu li ').get(1);
@@ -49,6 +48,25 @@ let HeaderFooterPageObjects = function () {
 
                                             /* Footer section elements */
 
+    this.footerPromoContainer = $('.promo__container'); //not used in casinomacao
+    this.footerPaymentMethods = $('.payment-methods'); //not used in casinomacao
+    this.foooterLogoLeft = $('.footer-inner .footer-logo a'); //not used in casinomacao
+    this.foooterLogoCenter = $('.footer-inner .footer-logo img'); //not used in casinomacao
+    this.footerLanguageTitle = $$('.footer-menu-block .block-title').get(0);   //
+    this.footerRuLanguageLink = $$('.footer-menu-block .block-title li').get(0);
+    this.footerEnLanguageLink = $$('.footer-menu-block .block-title li').get(1);
+    this.footerPopularLink = $$('.footer-menu-block .block-title li').get(2);
+    this.footerJackpotLink = $$('.footer-menu-block .block-title li').get(3);
+    this.footerAgeimage = $('.footer-bot .age-img');
+
+
+
+
+
+
+
+
+
     // this.contactUslLink = $('[translate="support.link"]');
     // this.paymentsLink = $('[translate="payments-page.link_short"]');
     // this.provabilityLink = $('[translate="provability.link"]');
@@ -59,6 +77,7 @@ let HeaderFooterPageObjects = function () {
     // this.complaintsLink = $('[translate="complaints-page.link"]');
     // this.partnersLink = $('[translate="partners.link"]');
     // this.mobileVersionLink = $('[translate="frontend.links.mobile_version"]');
+
 
     //далее описать ярлыки под линками(не первоочередное)
 
