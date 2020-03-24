@@ -6,7 +6,7 @@ exports.config = {
     specs: [
         // '*.js',
         //  './gamesPageUnloginedUser-spec.js'
-        './e2e-tests/welcomePageElementsPresent-spec.js'
+        './e2e-tests/mainPageElementsPresent-spec.js'
 
     ],
     capabilities: {

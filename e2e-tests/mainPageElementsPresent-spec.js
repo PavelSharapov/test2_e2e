@@ -4,22 +4,31 @@
 
 
 let HeaderFooterPageObjects = require('./PageObgects/headerFooter-pageObjects.js');
-let WelcomePage = require('./PageObgects/welcomePage-objects.js');
+let MainPage = require('./PageObgects/mainPage-objects.js');
 
 describe('Welcome page sections.', function () {
-    let welcomePage = new WelcomePage();
+    let mainPage = new MainPage();
     let headerFooter = new HeaderFooterPageObjects();
 
-    it('should open Welcome page', function () {
-        welcomePage.get();
+    it('should open Main page', function () {
+        mainPage.get();
         expect(browser.getCurrentUrl()).toEqual(browser.baseUrl);
     });
     describe('Header top section: ', function () {
         it('should displayed User name', function () {
             expect(headerFooter.userInfo.isDisplayed()).toBe(true);
         });
+        it('should displayed User name "Guest"', function () {
+            expect(headerFooter.userInfo.getText()).toContain('Guest');
+        });
         it('should displayed User balance', function () {
             expect(headerFooter.userBalance.isDisplayed()).toBe(true);
+            // headerFooter.userBalance.getText().then(function (text) {
+            //     console.log('ballance = ' + text);
+            //         });
+        });
+        it('should displayed FUN in User balance', function () {
+            expect(headerFooter.userBalance.getText()).toContain('FUN');
             // headerFooter.userBalance.getText().then(function (text) {
             //     console.log('ballance = ' + text);
             //         });
@@ -109,198 +118,198 @@ describe('Welcome page sections.', function () {
 //     });
 //     describe('Welcome landing section:', function () {
 //         it('should displayed Welcome block', function () {
-//             expect(welcomePage.welcomeBlock.isDisplayed()).toBe(true);
+//             expect(mainPage.welcomeBlock.isDisplayed()).toBe(true);
 //         });
 //         it('should displayed "WELCOME" text', function () {
-//             expect(welcomePage.welcomeText.isDisplayed()).toBe(true);
+//             expect(mainPage.welcomeText.isDisplayed()).toBe(true);
 //         });
 //         it('should displayed "First deposit bonus" text', function () {
-//             expect(welcomePage.welcomeBonusForFirstDepositText.isDisplayed()).toBe(true);
+//             expect(mainPage.welcomeBonusForFirstDepositText.isDisplayed()).toBe(true);
 //         });
 //         it('should displayed  "100%"  image', function () {
-//             expect(welcomePage.welcomeFirstDepositImage.isDisplayed()).toBe(true);
+//             expect(mainPage.welcomeFirstDepositImage.isDisplayed()).toBe(true);
 //         });
 //         it('should displayed "Want play" button', function () {
-//             expect(welcomePage.welcomeWantPlayButton.isDisplayed()).toBe(true);
+//             expect(mainPage.welcomeWantPlayButton.isDisplayed()).toBe(true);
 //         });
 //     });
 //     describe('Register section:', function () {
 //         it('register block is displayed',function () {
-//             expect(welcomePage.welcomeRegisterBlock.isDisplayed()).toBe(true);
+//             expect(mainPage.welcomeRegisterBlock.isDisplayed()).toBe(true);
 //         });
 //         it('cube-1 should displayed',function () {
-//             expect(welcomePage.welcomeRegisterBlockCube_1.isDisplayed()).toBe(true);
+//             expect(mainPage.welcomeRegisterBlockCube_1.isDisplayed()).toBe(true);
 //         });
 //         it('cube-2 should displayed',function () {
-//             expect(welcomePage.welcomeRegisterBlockCube_2.isDisplayed()).toBe(true);
+//             expect(mainPage.welcomeRegisterBlockCube_2.isDisplayed()).toBe(true);
 //         });
 //         it('cube-3 should displayed',function () {
-//             expect(welcomePage.welcomeRegisterBlockCube_3.isDisplayed()).toBe(true);
+//             expect(mainPage.welcomeRegisterBlockCube_3.isDisplayed()).toBe(true);
 //         });
 //         it('cube-4 should displayed',function () {
-//             expect(welcomePage.welcomeRegisterBlockCube_4.isDisplayed()).toBe(true);
+//             expect(mainPage.welcomeRegisterBlockCube_4.isDisplayed()).toBe(true);
 //         });
 //         it('should displayed "Registration" title',function () {
-//              expect(welcomePage.welcomeRegisterBlockRegistrationTitle.isDisplayed()).toBe(true);
+//              expect(mainPage.welcomeRegisterBlockRegistrationTitle.isDisplayed()).toBe(true);
 //         });
 //         it('should displayed "Email" input',function () {
-//              expect(welcomePage.welcomeRegisterBlockEmailInput.isDisplayed()).toBe(true);
+//              expect(mainPage.welcomeRegisterBlockEmailInput.isDisplayed()).toBe(true);
 //         });
 //         it('should displayed "Username" input',function () {
-//             expect(welcomePage.welcomeRegisterBlockUserNameInput.isDisplayed()).toBe(true);
+//             expect(mainPage.welcomeRegisterBlockUserNameInput.isDisplayed()).toBe(true);
 //         });
 //         it('should displayed "Password" input',function () {
-//             expect(welcomePage.welcomeRegisterBlockPasswordInput.isDisplayed()).toBe(true);
+//             expect(mainPage.welcomeRegisterBlockPasswordInput.isDisplayed()).toBe(true);
 //         });
 //         it('should displayed "Confirm password" input',function () {
-//             expect(welcomePage.welcomeRegisterBlockConfirmPasswordInput.isDisplayed()).toBe(true);
+//             expect(mainPage.welcomeRegisterBlockConfirmPasswordInput.isDisplayed()).toBe(true);
 //         });
 //         it('should displayed Agreement checkbox',function () {
-//             expect(welcomePage.welcomeRegisterBlockCheckBox.isDisplayed()).toBe(true);
+//             expect(mainPage.welcomeRegisterBlockCheckBox.isDisplayed()).toBe(true);
 //         });
 //         it('should displayed Terms and conditions link',function () {
-//             expect(welcomePage.welcomeTermsLink.isDisplayed()).toBe(true);
+//             expect(mainPage.welcomeTermsLink.isDisplayed()).toBe(true);
 //         });
 //         it('should present "/page/terms" link ', function () {
-//             expect(welcomePage.welcomeTermsLink.getAttribute('href'))
+//             expect(mainPage.welcomeTermsLink.getAttribute('href'))
 //                 .toEqual(browser.baseUrl + '/page/terms');
 //         });
 //         it('should displayed "Registration" button',function () {
-//             expect(welcomePage.welcomeRegisterBlockRegistrationButton.isDisplayed()).toBe(true);
+//             expect(mainPage.welcomeRegisterBlockRegistrationButton.isDisplayed()).toBe(true);
 //         });
 //     });
 //     describe('Our bonuses section:',function () {
 //         it('Our bonuses block should displayed',function () {
-//            expect(welcomePage.ourBonusesBlock.isDisplayed()).toBe(true);
+//            expect(mainPage.ourBonusesBlock.isDisplayed()).toBe(true);
 //         });
 //         it('Our bonuses block title should displayed',function () {
-//             expect(welcomePage.ourBonusesBlockTitle.isDisplayed()).toBe(true);
+//             expect(mainPage.ourBonusesBlockTitle.isDisplayed()).toBe(true);
 //         });
 //         it('"Bonus item 1" should displayed',function () {
-//             expect(welcomePage.ourBonusesBlockBonusItem_1.isDisplayed()).toBe(true);
-//            /* welcomePage.ourBonusesBlockBonusItem_1.getText().then(function (text) {
+//             expect(mainPage.ourBonusesBlockBonusItem_1.isDisplayed()).toBe(true);
+//            /* mainPage.ourBonusesBlockBonusItem_1.getText().then(function (text) {
 //                 console.log (text);
 //             });*/
 //         });
 //         it('should present "/bonus-info" link at Bonus item 1 ', function () {
-//             expect(welcomePage.ourBonusesBlockBonusItem_1.getAttribute('href'))
+//             expect(mainPage.ourBonusesBlockBonusItem_1.getAttribute('href'))
 //                 .toEqual(browser.baseUrl + '/bonus-info');
 //         });
 //         it('"Bonus item 2" should displayed',function () {
-//             expect(welcomePage.ourBonusesBlockBonusItem_2.isDisplayed()).toBe(true);
+//             expect(mainPage.ourBonusesBlockBonusItem_2.isDisplayed()).toBe(true);
 //         });
 //         it('should present "/bonus-info" link at Bonus item 2 ', function () {
-//             expect(welcomePage.ourBonusesBlockBonusItem_2.getAttribute('href'))
+//             expect(mainPage.ourBonusesBlockBonusItem_2.getAttribute('href'))
 //                 .toEqual(browser.baseUrl + '/bonus-info');
 //         });
 //         it('"Bonus item 3" should displayed',function () {
-//             expect(welcomePage.ourBonusesBlockBonusItem_3.isDisplayed()).toBe(true);
+//             expect(mainPage.ourBonusesBlockBonusItem_3.isDisplayed()).toBe(true);
 //         });
 //         it('should present "/bonus-info" link at Bonus item 3 ', function () {
-//             expect(welcomePage.ourBonusesBlockBonusItem_3.getAttribute('href'))
+//             expect(mainPage.ourBonusesBlockBonusItem_3.getAttribute('href'))
 //                 .toEqual(browser.baseUrl + '/bonus-info');
 //         });
 //         /*it('"Bonus item 4" should displayed',function () {
-//             expect(welcomePage.c.isDisplayed()).toBe(true);
+//             expect(mainPage.c.isDisplayed()).toBe(true);
 //         });*/
 //         it('Should displayed Slot picture ',function () {
-//             expect(welcomePage.ourBonusesBlockSlotImage.isDisplayed()).toBe(true);
+//             expect(mainPage.ourBonusesBlockSlotImage.isDisplayed()).toBe(true);
 //         });
 //     });
 //     describe('Best providers section:',function () {
 //         it('Best providers block should displayed', function () {
-//             expect(welcomePage.bestProvidesBlock.isDisplayed()).toBe(true);
+//             expect(mainPage.bestProvidesBlock.isDisplayed()).toBe(true);
 //         });
 //         it('Best providers block title should displayed',function () {
-//             expect(welcomePage.bestProvidesBlockTitle.isDisplayed()).toBe(true);
+//             expect(mainPage.bestProvidesBlockTitle.isDisplayed()).toBe(true);
 //         });
 //         it('should displayed Best provider item 1 ',function () {
-//             expect(welcomePage.bestProvidesBlockItem_1.isDisplayed()).toBe(true);
+//             expect(mainPage.bestProvidesBlockItem_1.isDisplayed()).toBe(true);
 //         });
 //         it('should present "/games/netent" link at provider item 1 ', function () {
-//             expect(welcomePage.bestProvidesBlockItem_1.getAttribute('href'))
+//             expect(mainPage.bestProvidesBlockItem_1.getAttribute('href'))
 //                 .toEqual(browser.baseUrl + '/games/netent');
-//             /*welcomePage.bestProvidesBlockItem_1.getText().then(function (providerName) {
+//             /*mainPage.bestProvidesBlockItem_1.getText().then(function (providerName) {
 //                 console.log(providerName);
 //             });*/
 //         });
 //         it('should displayed Best provider item 2 ',function () {
-//             expect(welcomePage.bestProvidesBlockItem_2.isDisplayed()).toBe(true);
+//             expect(mainPage.bestProvidesBlockItem_2.isDisplayed()).toBe(true);
 //         });
 //         it('should present "/games/microgaming" link at provider item 2 ', function () {
-//             expect(welcomePage.bestProvidesBlockItem_2.getAttribute('href'))
+//             expect(mainPage.bestProvidesBlockItem_2.getAttribute('href'))
 //                 .toEqual(browser.baseUrl + '/games/microgaming');
 //         });
 //         it('should displayed Best provider item 3 ',function () {
-//             expect(welcomePage.bestProvidesBlockItem_3.isDisplayed()).toBe(true);
+//             expect(mainPage.bestProvidesBlockItem_3.isDisplayed()).toBe(true);
 //         });
 //         it('should present "/games/amatic" link at provider item 3 ', function () {
-//             expect(welcomePage.bestProvidesBlockItem_3.getAttribute('href'))
+//             expect(mainPage.bestProvidesBlockItem_3.getAttribute('href'))
 //                 .toEqual(browser.baseUrl + '/games/amatic');
 //         });
 //         it('should displayed Best provider item 4 ',function () {
-//             expect(welcomePage.bestProvidesBlockItem_4.isDisplayed()).toBe(true);
+//             expect(mainPage.bestProvidesBlockItem_4.isDisplayed()).toBe(true);
 //         });
 //         it('should present "/games/novomatic" link at provider item 4 ', function () {
-//             expect(welcomePage.bestProvidesBlockItem_4.getAttribute('href'))
+//             expect(mainPage.bestProvidesBlockItem_4.getAttribute('href'))
 //                 .toEqual(browser.baseUrl + '/games/novomatic');
 //         });
 //         it('should displayed Best provider item 5 ',function () {
-//             expect(welcomePage.bestProvidesBlockItem_5.isDisplayed()).toBe(true);
+//             expect(mainPage.bestProvidesBlockItem_5.isDisplayed()).toBe(true);
 //         });
 //         it('should present "/games/aristocrat" link at provider item 5 ', function () {
-//             expect(welcomePage.bestProvidesBlockItem_5.getAttribute('href'))
+//             expect(mainPage.bestProvidesBlockItem_5.getAttribute('href'))
 //                 .toEqual(browser.baseUrl + '/games/aristocrat');
 //         });
 //         it('should displayed Best provider item 6 ',function () {
-//             expect(welcomePage.bestProvidesBlockItem_6.isDisplayed()).toBe(true);
+//             expect(mainPage.bestProvidesBlockItem_6.isDisplayed()).toBe(true);
 //         });
 //         it('should present "/games/egt" link at provider item 6 ', function () {
-//             expect(welcomePage.bestProvidesBlockItem_6.getAttribute('href'))
+//             expect(mainPage.bestProvidesBlockItem_6.getAttribute('href'))
 //                 .toEqual(browser.baseUrl + '/games/egt');
 //         });
 //         it('should displayed Best provider item 7 ',function () {
-//             expect(welcomePage.bestProvidesBlockItem_7.isDisplayed()).toBe(true);
+//             expect(mainPage.bestProvidesBlockItem_7.isDisplayed()).toBe(true);
 //         });
 //         it('should present "/games/igt" link at provider item 7 ', function () {
-//             expect(welcomePage.bestProvidesBlockItem_7.getAttribute('href'))
+//             expect(mainPage.bestProvidesBlockItem_7.getAttribute('href'))
 //                 .toEqual(browser.baseUrl + '/games/igt');
 //         });
 //         it('should displayed Best provider item 8 ',function () {
-//             expect(welcomePage.bestProvidesBlockItem_8.isDisplayed()).toBe(true);
+//             expect(mainPage.bestProvidesBlockItem_8.isDisplayed()).toBe(true);
 //         });
 //         it('should present "/games/igt" link at provider item 8 ', function () {
-//             expect(welcomePage.bestProvidesBlockItem_8.getAttribute('href'))
+//             expect(mainPage.bestProvidesBlockItem_8.getAttribute('href'))
 //                 .toEqual(browser.baseUrl + '/games/igrosoft');
 //         });
 //     });
 //     describe('"Want to play" section:', function () {
 //         it('should displayed w-whant block', function () {
-//            expect(welcomePage.wantPlayBlock.isDisplayed()).toBe(true);
+//            expect(mainPage.wantPlayBlock.isDisplayed()).toBe(true);
 //         });
 //         it('should displayed want play block arrow', function () {
-//            expect(welcomePage.wantPlayArrow.isDisplayed()).toBe(true);
+//            expect(mainPage.wantPlayArrow.isDisplayed()).toBe(true);
 //         });
 //         it('should displayed "Want play" button', function () {
-//            expect(welcomePage.wantPlayButton.isDisplayed()).toBe(true);
+//            expect(mainPage.wantPlayButton.isDisplayed()).toBe(true);
 //         });
 //         it('coin_1 should displayed', function () {
-//             expect(welcomePage.wantPlayCoin_1.isDisplayed()).toBe(true);
+//             expect(mainPage.wantPlayCoin_1.isDisplayed()).toBe(true);
 //         });
 //         it('coin_2 should displayed', function () {
-//             expect(welcomePage.wantPlayCoin_2.isDisplayed()).toBe(true);
+//             expect(mainPage.wantPlayCoin_2.isDisplayed()).toBe(true);
 //         });
 //         it('coin_3 should displayed', function () {
-//             expect(welcomePage.wantPlayCoin_3.isDisplayed()).toBe(true);
+//             expect(mainPage.wantPlayCoin_3.isDisplayed()).toBe(true);
 //         });
 //         it('coin_4 should displayed', function () {
-//             expect(welcomePage.wantPlayCoin_4.isDisplayed()).toBe(true);
+//             expect(mainPage.wantPlayCoin_4.isDisplayed()).toBe(true);
 //         });
 //         it('coin_5 should displayed', function () {
-//             expect(welcomePage.wantPlayCoin_5.isDisplayed()).toBe(true);
+//             expect(mainPage.wantPlayCoin_5.isDisplayed()).toBe(true);
 //         });
 //         it('coin_6 should displayed', function () {
-//             expect(welcomePage.wantPlayCoin_6.isDisplayed()).toBe(true);
+//             expect(mainPage.wantPlayCoin_6.isDisplayed()).toBe(true);
 //         });
 //     });
 //     describe('Footer section:', function () {
