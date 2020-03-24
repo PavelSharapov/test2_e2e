@@ -14,12 +14,12 @@ describe('Welcome page sections.', function () {
         mainPage.get();
         expect(browser.getCurrentUrl()).toEqual(browser.baseUrl);
     });
-    describe('Header top section: ', function () {
+    describe('Header top-line section: ', function () {
         it('should displayed User name', function () {
             expect(headerFooter.userInfo.isDisplayed()).toBe(true);
         });
-        it('should displayed User name "Guest"', function () {
-            expect(headerFooter.userInfo.getText()).toContain('Guest');
+        it('should displayed User name "Гость"', function () {
+            expect(headerFooter.userInfo.getText()).toContain('Гость');
         });
         it('should displayed User balance', function () {
             expect(headerFooter.userBalance.isDisplayed()).toBe(true);
@@ -27,7 +27,7 @@ describe('Welcome page sections.', function () {
             //     console.log('ballance = ' + text);
             //         });
         });
-        it('should displayed FUN in User balance', function () {
+        it('should displayed "FUN" word in User balance', function () {
             expect(headerFooter.userBalance.getText()).toContain('FUN');
             // headerFooter.userBalance.getText().then(function (text) {
             //     console.log('ballance = ' + text);
@@ -36,11 +36,21 @@ describe('Welcome page sections.', function () {
         it('should display user icon', function () {
             expect(headerFooter.userIcon.isDisplayed()).toBe(true);
         });
-    describe('Header bottom section: ', function () {
-        it('should displayed Game menu', function () {
-            expect(headerFooter.headerGameButton.isDisplayed()).toBe(true);
-            });
+        it('should present Login button', function () {
+            expect(headerFooter.logInSignInButton.isDisplayed()).toBe(true);
         });
+    });
+    describe('Header bottom-line section: ', function () {
+        it('should present 7 elements in this section', function () {
+            expect(headerFooter.allGameMenuButtons.count()).toBe(12)  // 12 items: 6 for desctop + 6 for mobile
+        });
+        it('should displayed "Games" menu', function () {
+            expect(headerFooter.headerGameButton.isDisplayed()).toBe(true);
+        });
+        it('should displayed "Virtual sport" menu', function () {
+            expect(headerFooter.headerVirtualSportButton.isDisplayed()).toBe(true);
+        });
+    });
 // дописать тесты хедера
 
 
@@ -414,7 +424,7 @@ describe('Welcome page sections.', function () {
 //             expect(headerFooter.footerScrollTopButton.isDisplayed()).toBe(true);
 //
 //         });
-    });
+
 });
 
 

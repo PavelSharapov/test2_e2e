@@ -16,7 +16,7 @@ let HeaderFooterPageObjects = function () {
 // let HeaderFooterPageObjects = function () {
 //     let gamesPage = new GamesPage();
 
-                                            /* Header top-line elements */
+                                            /* Header: top-line elements */
 
     this.userInfo = $('.profile-info .user-name');
     this.userBalance = $('.profile-info .block-count');
@@ -24,8 +24,9 @@ let HeaderFooterPageObjects = function () {
     this.logInSignInButton = $('.header-auth .btn.btn-vl.bounce');
 
 
-                                            /* Header bottom-line section elements */
+                                            /* Header: bottom-line section elements */
 
+    this.allGameMenuButtons = $$('.header-menu .main-menu li ');
     this.headerGameButton = $$('.header-menu .main-menu li ').get(0);
     this.headerVirtualSportButton = $$('.header-menu .main-menu li ').get(1);
     this.headerSportButton = $$('.header-menu .main-menu li ').get(2);
