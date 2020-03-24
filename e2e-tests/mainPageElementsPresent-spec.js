@@ -41,17 +41,40 @@ describe('Welcome page sections.', function () {
         });
     });
     describe('Header bottom-line section: ', function () {
-        it('should present 7 elements in this section', function () {
+        it('should present 12 elements in this section', function () {
             expect(headerFooter.allGameMenuButtons.count()).toBe(12)  // 12 items: 6 for desctop + 6 for mobile
         });
-        it('should displayed "Games" menu', function () {
+        it('should displayed "Games" button', function () {
             expect(headerFooter.headerGameButton.isDisplayed()).toBe(true);
         });
-        it('should displayed "Virtual sport" menu', function () {
+        it('should displayed "Virtual sport" button ', function () {
             expect(headerFooter.headerVirtualSportButton.isDisplayed()).toBe(true);
         });
+        it('should displayed "Sport" button', function () {
+            expect(headerFooter.headerSportButton.isDisplayed()).toBe(true);
+        });
+        it('should displayed "Support" button', function () {
+            expect(headerFooter.headerSupportButton.isDisplayed()).toBe(true);
+        });
+        it('should displayed "FAQ" menu', function () {
+            expect(headerFooter.headerFaqButton.isDisplayed()).toBe(true);
+        });
+        it('should displayed "Jackpot" menu', function () {
+            expect(headerFooter.headerJackpotButton.isDisplayed()).toBe(true);
+        });
+        it('should displayed "Search input" menu', function () {
+            expect(headerFooter.headerSearchInput.isDisplayed()).toBe(true);
+        });
     });
-// дописать тесты хедера
+    describe('Hero section:', function () {
+        it('should ', function () {
+
+        });
+    })
+// дописать тесты hero: jackpot+slider+winners
+// дописать тесты game menu
+// дописать тесты body
+// дописать тесты footer
 
 
         // it('should displayed header Game menu ', function () {
