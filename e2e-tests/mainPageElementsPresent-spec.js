@@ -14,63 +14,67 @@ describe('Welcome page sections.', function () {
         mainPage.get();
         expect(browser.getCurrentUrl()).toEqual(browser.baseUrl);
     });
-    describe('Header top-line section: ', function () {
-        it('should displayed User name', function () {
-            expect(headerFooter.userInfo.isDisplayed()).toBe(true);
-        });
-        it('should displayed User name "Гость"', function () {
-            expect(headerFooter.userInfo.getText()).toContain('Гость');
-        });
-        it('should displayed User balance', function () {
-            expect(headerFooter.userBalance.isDisplayed()).toBe(true);
-            // headerFooter.userBalance.getText().then(function (text) {
-            //     console.log('ballance = ' + text);
-            //         });
-        });
-        it('should displayed "FUN" word in User balance', function () {
-            expect(headerFooter.userBalance.getText()).toContain('FUN');
-            // headerFooter.userBalance.getText().then(function (text) {
-            //     console.log('ballance = ' + text);
-            //         });
-        });
-        it('should display user icon', function () {
-            expect(headerFooter.userIcon.isDisplayed()).toBe(true);
-        });
-        it('should present Login button', function () {
-            expect(headerFooter.logInSignInButton.isDisplayed()).toBe(true);
-        });
-    });
-    describe('Header bottom-line section: ', function () {
-        it('should present 12 elements in this section', function () {
-            expect(headerFooter.allGameMenuButtons.count()).toBe(12)  // 12 items: 6 for desctop + 6 for mobile
-        });
-        it('should displayed "Games" button', function () {
-            expect(headerFooter.headerGameButton.isDisplayed()).toBe(true);
-        });
-        it('should displayed "Virtual sport" button ', function () {
-            expect(headerFooter.headerVirtualSportButton.isDisplayed()).toBe(true);
-        });
-        it('should displayed "Sport" button', function () {
-            expect(headerFooter.headerSportButton.isDisplayed()).toBe(true);
-        });
-        it('should displayed "Support" button', function () {
-            expect(headerFooter.headerSupportButton.isDisplayed()).toBe(true);
-        });
-        it('should displayed "FAQ" menu', function () {
-            expect(headerFooter.headerFaqButton.isDisplayed()).toBe(true);
-        });
-        it('should displayed "Jackpot" menu', function () {
-            expect(headerFooter.headerJackpotButton.isDisplayed()).toBe(true);
-        });
-        it('should displayed "Search input" menu', function () {
-            expect(headerFooter.headerSearchInput.isDisplayed()).toBe(true);
-        });
-    });
+    // describe('Header top-line section: ', function () {
+    //     it('should displayed User name', function () {
+    //         expect(headerFooter.userInfo.isDisplayed()).toBe(true);
+    //     });
+    //     it('should displayed User name "Гость"', function () {
+    //         expect(headerFooter.userInfo.getText()).toContain('Гость');
+    //     });
+    //     it('should displayed User balance', function () {
+    //         expect(headerFooter.userBalance.isDisplayed()).toBe(true);
+    //         // headerFooter.userBalance.getText().then(function (text) {
+    //         //     console.log('ballance = ' + text);
+    //         //         });
+    //     });
+    //     it('should displayed "FUN" word in User balance', function () {
+    //         expect(headerFooter.userBalance.getText()).toContain('FUN');
+    //         // headerFooter.userBalance.getText().then(function (text) {
+    //         //     console.log('ballance = ' + text);
+    //         //         });
+    //     });
+    //     it('should display user icon', function () {
+    //         expect(headerFooter.userIcon.isDisplayed()).toBe(true);
+    //     });
+    //     it('should present Login button', function () {
+    //         expect(headerFooter.logInSignInButton.isDisplayed()).toBe(true);
+    //     });
+    // });
+    // describe('Header bottom-line section: ', function () {
+    //     it('should present 12 elements in this section', function () {
+    //         expect(headerFooter.allGameMenuButtons.count()).toBe(12)  // 12 items: 6 for desctop + 6 for mobile
+    //     });
+    //     it('should displayed "Games" button', function () {
+    //         expect(headerFooter.headerGameButton.isDisplayed()).toBe(true);
+    //     });
+    //     it('should displayed "Virtual sport" button ', function () {
+    //         expect(headerFooter.headerVirtualSportButton.isDisplayed()).toBe(true);
+    //     });
+    //     it('should displayed "Sport" button', function () {
+    //         expect(headerFooter.headerSportButton.isDisplayed()).toBe(true);
+    //     });
+    //     it('should displayed "Support" button', function () {
+    //         expect(headerFooter.headerSupportButton.isDisplayed()).toBe(true);
+    //     });
+    //     it('should displayed "FAQ" menu', function () {
+    //         // debugger;
+    //         expect(headerFooter.headerFaqButton.isDisplayed()).toBe(true);
+    //     });
+    //     it('should displayed "Jackpot" menu', function () {
+    //         expect(headerFooter.headerJackpotButton.isDisplayed()).toBe(true);
+    //     });
+    //     it('should displayed "Search input" menu', function () {
+    //         expect(headerFooter.headerSearchInput.isDisplayed()).toBe(true);
+    //     });
+    // });
     describe('Hero section:', function () {
-        it('should ', function () {
+        it('should displayed background', function () {
+            expect(mainPage.heroBackground.getCssValue('background-image').isDisplayed()).toBe(true);
 
         });
-    })
+    });
+
+
 // дописать тесты hero: jackpot+slider+winners
 // дописать тесты game menu
 // дописать тесты body

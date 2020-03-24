@@ -34,6 +34,7 @@ exports.config = {
            }
        }*/
     },
+    // baseUrl: 'http://localhost:3001/',
     baseUrl: 'https://casinomacao.bet/',
     allScriptsTimeout: 8000,
     getPageTimeout: 10000,

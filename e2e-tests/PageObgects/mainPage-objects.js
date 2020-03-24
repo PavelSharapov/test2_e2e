@@ -20,7 +20,7 @@ let MainPage = function () {
                             /*  Main page hero section: Jackpot */
 
 
-    this.heroBlock = $('.hero');
+    this.heroBackground = $('.hero');
     this.jackpotBlockTitle = $$('.hero .block-title').get(0);
     this.jackpotDiamondName = $('.jackpot-link.first .jackpot-name');
     this.jackpotDiamondAmounth = $('.jackpot-link.first .money__amount__counter');
