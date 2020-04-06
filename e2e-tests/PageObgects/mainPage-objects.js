@@ -37,14 +37,9 @@ let MainPage = function () {
 
     this.slidersSection = $('.slick-list');
     this.sliderSlide1 = $$('.slick-list .slider_slide [src="/images/banners/jackpot/banner.svg"]').get(0);
-    this.sliderSlide1Visible = $('.slick-slide.slick-active.slick-current');
     this.sliderSlide2 = $$('.slick-list .slider_slide [src="/images/slider/815x374_1.jpg"]').get(0);
     this.sliderSlide3 = $$('.slick-list .slider_slide [src="/images/slider/815x374_3.jpg"]').get(0);
     this.sliderSlide4 = $$('.slick-list .slider_slide [src="/images/slider/815x374_4.jpg"]').get(0);
-    // this.sliderSlide1 = $$('.slick-list .slider_slide [src="/images/banners/jackpot/banner.svg"]').get(0);
-    // this.sliderSlide2 = $$('.slick-list .slider_slide [src="/images/slider/815x374_1.jpg"]').get(0);
-    // this.sliderSlide3 = $$('.slick-list .slider_slide [src="/images/slider/815x374_3.jpg"]').get(0);
-    // this.sliderSlide4 = $$('.slick-list .slider_slide [src="/images/slider/815x374_4.jpg"]').get(0);
     this.sliderDot1 = $$('.slider li button').get(0);
     this.sliderDot2 = $$('.slider li button').get(1);
     this.sliderDot3 = $$('.slider li button').get(2);
@@ -116,13 +111,14 @@ let MainPage = function () {
      *  Display a different slides
      */
 
-    this.firtsDotPress = function () {
+    this.firstDotPress = function () {
         browser.actions().click(this.sliderDot1).perform();
-        browser.wait(EC.visibilityOf(this.sliderSlide1Visible),5000);
+        browser.wait(EC.visibilityOf(this.sliderSlide1Visible),10000);
     };
     this.secondDotPress = function () {
         browser.actions().click(this.sliderDot2).perform();
-        browser.wait(EC.visibilityOf(this.sliderSlide2),5000);
+        // browser.wait(this.sliderSlide2Visible, 6000);
+        browser.wait(EC.invisibilityOf(this.sliderSlide1),10000);
     };
     this.thirdDotPress = function () {
         browser.actions().click(this.sliderDot3).perform();

@@ -113,8 +113,8 @@ describe('Welcome page sections:', function () {
         });
         it('should present actual 1st slide', function () {
             mainPage.secondDotPress() ;
-            expect(mainPage.sliderSlide1.isDisplayed()).toBe(true);
-            mainPage.sliderSlide1Visible.getAttribute('aria-hidden').then(function (link) {
+            expect(mainPage.sliderSlide1.getAttribute('aria-hidden')).toBe('false');
+            mainPage.sliderSlide1.getAttribute('aria-hidden').then(function (link) {
                 console.log(link)
                 }
 
