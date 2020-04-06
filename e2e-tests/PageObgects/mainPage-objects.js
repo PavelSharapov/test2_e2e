@@ -37,9 +37,14 @@ let MainPage = function () {
 
     this.slidersSection = $('.slick-list');
     this.sliderSlide1 = $$('.slick-list .slider_slide [src="/images/banners/jackpot/banner.svg"]').get(0);
+    this.sliderSlide1Visible = $('.slick-slide.slick-active.slick-current');
     this.sliderSlide2 = $$('.slick-list .slider_slide [src="/images/slider/815x374_1.jpg"]').get(0);
     this.sliderSlide3 = $$('.slick-list .slider_slide [src="/images/slider/815x374_3.jpg"]').get(0);
     this.sliderSlide4 = $$('.slick-list .slider_slide [src="/images/slider/815x374_4.jpg"]').get(0);
+    // this.sliderSlide1 = $$('.slick-list .slider_slide [src="/images/banners/jackpot/banner.svg"]').get(0);
+    // this.sliderSlide2 = $$('.slick-list .slider_slide [src="/images/slider/815x374_1.jpg"]').get(0);
+    // this.sliderSlide3 = $$('.slick-list .slider_slide [src="/images/slider/815x374_3.jpg"]').get(0);
+    // this.sliderSlide4 = $$('.slick-list .slider_slide [src="/images/slider/815x374_4.jpg"]').get(0);
     this.sliderDot1 = $$('.slider li button').get(0);
     this.sliderDot2 = $$('.slider li button').get(1);
     this.sliderDot3 = $$('.slider li button').get(2);
@@ -59,7 +64,7 @@ let MainPage = function () {
 
 
 
-                            /*  Main page: Games horizontal sub-menu */
+                            /*  Main page: Games games menu */
 
 
     this.allGamesMenuButton = $$('.content-navi--horizontal-submenu ul li').get(0);
@@ -72,7 +77,7 @@ let MainPage = function () {
     this.lotteryGamesMenuButton = $$('.content-navi--horizontal-submenu ul li').get(7);
 
 
-                            /*  Main page: Games preview */
+                            /*  Main page: Games preview blocks */
 
     this.gamePreview1 = $$('.games-list .game-item__img-container ').get(0);
     this.gamePreview2 = $$('.games-list .game-item__img-container ').get(1);
@@ -85,7 +90,7 @@ let MainPage = function () {
     this.gamePreview9 = $$('.games-list .game-item__img-container ').get(8);
     this.gamePreview10 = $$('.games-list .game-item__img-container ').get(9);
         /* для показательного теста достаточно 10 превьюх,
-    для полного теста прописываем все превью и смотрим айди игры и линк */
+    для полного теста прописываем все превью и смотрим в тесте на айди игр и линк */
 
 
 
@@ -105,16 +110,38 @@ let MainPage = function () {
         browser.driver.manage().window().maximize();
         browser.driver.get(browser.baseUrl);
         this.waitForMainPageDownload();
-
-
-
-
     };
+
+    /**
+     *  Display a different slides
+     */
+
+    this.firtsDotPress = function () {
+        browser.actions().click(this.sliderDot1).perform();
+        browser.wait(EC.visibilityOf(this.sliderSlide1Visible),5000);
+    };
+    this.secondDotPress = function () {
+        browser.actions().click(this.sliderDot2).perform();
+        browser.wait(EC.visibilityOf(this.sliderSlide2),5000);
+    };
+    this.thirdDotPress = function () {
+        browser.actions().click(this.sliderDot3).perform();
+        browser.wait(EC.visibilityOf(this.sliderSlide3),3000);
+    };
+    this.fourthDotPress = function () {
+        browser.actions().click(this.sliderDot4).perform();
+        browser.wait(EC.visibilityOf(this.sliderSlide4),3000);
+    };
+
+
+
+
+
     /**
      * Wait for Main page is download
      */
     this.waitForMainPageDownload = function () {
-        browser.wait(EC.visibilityOf(headerFooter.userInfo),10000)
+        browser.wait(EC.visibilityOf(headerFooter.userInfo),10000);
         browser.wait(EC.visibilityOf(this.gamePreview1),10000)
     };
     // /**

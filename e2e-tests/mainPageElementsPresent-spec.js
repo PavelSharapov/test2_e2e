@@ -6,7 +6,7 @@
 let HeaderFooterPageObjects = require('./PageObgects/headerFooter-pageObjects.js');
 let MainPage = require('./PageObgects/mainPage-objects.js');
 
-describe('Welcome page sections.', function () {
+describe('Welcome page sections:', function () {
     let mainPage = new MainPage();
     let headerFooter = new HeaderFooterPageObjects();
 
@@ -67,12 +67,62 @@ describe('Welcome page sections.', function () {
     //         expect(headerFooter.headerSearchInput.isDisplayed()).toBe(true);
     //     });
     // });
-    describe('Hero section:', function () {
-        it('should displayed background', function () {
-            expect(mainPage.heroBackground.getCssValue('background-image').isDisplayed()).toBe(true);
-
+    // describe('Hero section:', function () {
+    //     it('should displayed background of hero block', function () {
+    //         expect(mainPage.heroBackground.getCssValue('background-image')).toContain('https://casinomacao.bet/images/top-casino.jpg');
+    //         // mainPage.heroBackground.getCssValue('background-image').then(function (attr) {
+    //         //     console.log(attr)
+    //         //
+    //         // })
+    //     });
+    // describe ('Jackpot block:', function () {
+    //     it('should displayed Jackpot block title ', function () {
+    //         expect(mainPage.jackpotBlockTitle.isDisplayed()).toBe(true);
+    //     });
+    //     it('should been actual image ', function () {
+    //         expect(mainPage.jackpotBlockTitle.getCssValue('background-image')).toContain('https://casinomacao.bet/images/jackpots/jp-animated.gif')
+    //     });
+    //     it('should present "Diamond" jp name', function () {
+    //         expect(mainPage.jackpotDiamondName.isDisplayed()).toBe(true);
+    //     });
+    //     it('should present "Diamond" jp money amounth', function () {
+    //         expect(mainPage.jackpotDiamondAmounth.isDisplayed()).toBe(true);
+    //     });
+    //     it('should present "GOLD" jp name', function () {
+    //         expect(mainPage.jackpotGoldName.isDisplayed()).toBe(true);
+    //     });
+    //     it('should present "GOLD" jp money amounth', function () {
+    //         expect(mainPage.jackpotGoldAmounth.isDisplayed()).toBe(true);
+    //     });
+    //     it('should present "SILVER" jp name', function () {
+    //         expect(mainPage.jackpotSilverName.isDisplayed()).toBe(true);
+    //     });
+    //     it('should present "SILVER" jp money amounth', function () {
+    //         expect(mainPage.jackpotSilverAmounth.isDisplayed()).toBe(true);
+    //     });
+    //     it('should present "BRONZE" jp name', function () {
+    //         expect(mainPage.jackpotBronzeName.isDisplayed()).toBe(true);
+    //     });
+    //     it('should present "BRONZE" jp money amounth', function () {
+    //         expect(mainPage.jackpotBronzeAmounth.isDisplayed()).toBe(true);
+    //     });
+    // });
+    describe('Slider block:', function () {
+        it('should slick list is present', function () {
+            expect(mainPage.slidersSection.isDisplayed()).toBe(true);
         });
+        it('should present actual 1st slide', function () {
+            mainPage.secondDotPress() ;
+            expect(mainPage.sliderSlide1.isDisplayed()).toBe(true);
+            mainPage.sliderSlide1Visible.getAttribute('aria-hidden').then(function (link) {
+                console.log(link)
+                }
+
+            )
+        });
+
     });
+
 
 
 // дописать тесты hero: jackpot+slider+winners
