@@ -36,10 +36,11 @@ let MainPage = function () {
 
 
     this.slidersSection = $('.slick-list');
-    this.sliderSlide1 = $$('.slick-list .slider_slide [src="/images/banners/jackpot/banner.svg"]').get(0);
-    this.sliderSlide2 = $$('.slick-list .slider_slide [src="/images/slider/815x374_1.jpg"]').get(0);
-    this.sliderSlide3 = $$('.slick-list .slider_slide [src="/images/slider/815x374_3.jpg"]').get(0);
-    this.sliderSlide4 = $$('.slick-list .slider_slide [src="/images/slider/815x374_4.jpg"]').get(0);
+    this.sliderSlideIsActive = $('.slick-slide.slick-active.slick-current');
+    this.sliderSlide1image = $$('.slick-list .slider_slide [src="/images/banners/jackpot/banner.svg"]').get(0);
+    this.sliderSlide2image = $$('.slick-list .slider_slide [src="/images/slider/815x374_1.jpg"]').get(0);
+    this.sliderSlide3image = $$('.slick-list .slider_slide [src="/images/slider/815x374_3.jpg"]').get(0);
+    this.sliderSlide4image = $$('.slick-list .slider_slide [src="/images/slider/815x374_4.jpg"]').get(0);
     this.sliderDot1 = $$('.slider li button').get(0);
     this.sliderDot2 = $$('.slider li button').get(1);
     this.sliderDot3 = $$('.slider li button').get(2);
@@ -108,25 +109,24 @@ let MainPage = function () {
     };
 
     /**
-     *  Display a different slides
+     *  Display(active) a different slides
      */
 
     this.firstDotPress = function () {
         browser.actions().click(this.sliderDot1).perform();
-        browser.wait(EC.visibilityOf(this.sliderSlide1Visible),10000);
+        browser.wait(EC.visibilityOf(this.sliderSlide),10000);
     };
     this.secondDotPress = function () {
         browser.actions().click(this.sliderDot2).perform();
-        // browser.wait(this.sliderSlide2Visible, 6000);
-        browser.wait(EC.invisibilityOf(this.sliderSlide1),10000);
+        browser.wait(EC.visibilityOf(this.sliderSlideIsActive),10000);
     };
     this.thirdDotPress = function () {
         browser.actions().click(this.sliderDot3).perform();
-        browser.wait(EC.visibilityOf(this.sliderSlide3),3000);
+        browser.wait(EC.visibilityOf(this.sliderSlideIsActive),3000);
     };
     this.fourthDotPress = function () {
         browser.actions().click(this.sliderDot4).perform();
-        browser.wait(EC.visibilityOf(this.sliderSlide4),3000);
+        browser.wait(EC.visibilityOf(this.sliderSlideIsActive),3000);
     };
 
 
@@ -155,4 +155,4 @@ let MainPage = function () {
     // };
 };
 
-module.exports = MainPage;
+module.exports = new MainPage(); // создание глобального хранилища и экспорт в него объектов

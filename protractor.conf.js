@@ -2,6 +2,7 @@
 exports.config = {
 
     framework: 'jasmine2',
+    directConnect: true,
     seleniumAddress: 'http://localhost:4444/wd/hub',
     specs: [
         // '*.js',
@@ -11,11 +12,12 @@ exports.config = {
     ],
     capabilities: {
         browserName: 'chrome',
-        chromeOptions: {
+        'goog:chromeOptions': {
             'excludeSwitches': ['enable-automation'], // disable-infobars "chrome is being controlled by automated software"
             'args': [
                 // 'disable-dev-shm-usage', // fix 199 error of webdriver
-                'no-sandbox',            // fix 199 error of webdriver
+                'no-sandbox'  // fix 199 error of webdriver
+                // '--whitelisted-ips'// fix 199 error of webdriver
                 // // 'autoDismissAlerts = true',
                 // "--disable-notifications "
 
@@ -36,6 +38,7 @@ exports.config = {
     },
     // baseUrl: 'http://localhost:3002/',
     baseUrl: 'https://casinomacao.bet/',
+    // baseUrl: 'https://c7go.com/',
     allScriptsTimeout: 8000,
     getPageTimeout: 10000,
     jasmineNodeOpts: {

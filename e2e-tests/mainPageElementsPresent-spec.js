@@ -3,11 +3,13 @@
 /* This spec contains of functional tests of Welcome page for unlogined user */
 
 
-let HeaderFooterPageObjects = require('./PageObgects/headerFooter-pageObjects.js');
-let MainPage = require('./PageObgects/mainPage-objects.js');
+// let headerFooter = require('./PageObgects/headerFooter-pageObjects.js'); // импорт из глобального хранилища в переменную
+let HeaderFooterPageObjects = require('./PageObgects/headerFooter-pageObjects.js'); // импорт из глобального хранилища в переменную
+
+let mainPage = require('./PageObgects/mainPage-objects.js'); // импорт из глобального хранилища в переменную
 
 describe('Welcome page sections:', function () {
-    let mainPage = new MainPage();
+    // let mainPage = new MainPage();
     let headerFooter = new HeaderFooterPageObjects();
 
     it('should open Main page', function () {
@@ -112,10 +114,28 @@ describe('Welcome page sections:', function () {
             expect(mainPage.slidersSection.isDisplayed()).toBe(true);
         });
         it('should present actual 1st slide', function () {
+            mainPage.firstDotPress() ;
+            expect(mainPage.sliderSlide1image.getAttribute('src')).toBe(browser.baseUrl + 'images/banners/jackpot/banner.svg');
+            mainPage.sliderSlide1image.getAttribute('src').then(function (link) {
+                    console.log(link)
+                }
+
+            )
+        });
+        it('should present actual 2nd slide', function () {
             mainPage.secondDotPress() ;
-            expect(mainPage.sliderSlide1.getAttribute('aria-hidden')).toBe('false');
-            mainPage.sliderSlide1.getAttribute('aria-hidden').then(function (link) {
+            expect(mainPage.sliderSlide2image.getAttribute('src')).toBe(browser.baseUrl + 'images/slider/815x374_1.jpg');
+            mainPage.sliderSlide2image.getAttribute('src').then(function (link) {
                 console.log(link)
+                }
+
+            )
+        });
+        it('should present actual 3rd slide', function () {
+            mainPage.thirdDotPress() ;
+            expect(mainPage.sliderSlide3image.getAttribute('src')).toBe(browser.baseUrl + 'images/slider/815x374_3.jpg');
+            mainPage.sliderSlide3image.getAttribute('src').then(function (link) {
+                    console.log(link)
                 }
 
             )
