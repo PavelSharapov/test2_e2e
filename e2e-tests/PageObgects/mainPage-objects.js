@@ -36,11 +36,13 @@ let MainPage = function () {
 
 
     this.slidersSection = $('.slick-list');
+    this.sliderSlideNotActive = $$('[aria-hidden="blabla"]').get(0);
     this.sliderSlideIsActive = $('.slick-slide.slick-active.slick-current');
     this.sliderSlide1image = $$('.slick-list .slider_slide [src="/images/banners/jackpot/banner.svg"]').get(0);
     this.sliderSlide2image = $$('.slick-list .slider_slide [src="/images/slider/815x374_1.jpg"]').get(0);
     this.sliderSlide3image = $$('.slick-list .slider_slide [src="/images/slider/815x374_3.jpg"]').get(0);
-    this.sliderSlide4image = $$('.slick-list .slider_slide [src="/images/slider/815x374_4.jpg"]').get(0);
+    // this.sliderSlide4image = $$('.slick-list .slider_slide [src="/images/slider/815x374_4.jpg"]').get(0);
+
     this.sliderDot1 = $$('.slider li button').get(0);
     this.sliderDot2 = $$('.slider li button').get(1);
     this.sliderDot3 = $$('.slider li button').get(2);
@@ -48,7 +50,7 @@ let MainPage = function () {
 
                             /*  Main page hero section: Winners block */
 
-    this.blockWinnersTitle = $('.block--winners .block-title div');
+    this.blockWinnersTitle = $$('.block--winners .block-title div').get(0);
     this.blockWinnersLatestItem = $$('.block--winners .block--winners-tabs_item').get(0);
     this.blockWinnersTopItem = $$('.block--winners .block--winners-tabs_item').get(1);
     this.blockWinnersItemWinner1 = $$('.block--winners .winner-list__item winner').get(0);
@@ -103,7 +105,8 @@ let MainPage = function () {
 
 
         browser.ignoreSynchronization = true;
-        browser.driver.manage().window().maximize();
+        // browser.driver.manage().window().maximize();
+        browser.driver.manage().window().setSize(1280,900);
         browser.driver.get(browser.baseUrl);
         this.waitForMainPageDownload();
     };
@@ -114,7 +117,8 @@ let MainPage = function () {
 
     this.firstDotPress = function () {
         browser.actions().click(this.sliderDot1).perform();
-        browser.wait(EC.visibilityOf(this.sliderSlide),10000);
+        browser.wait(EC.visibilityOf(this.sliderSlideIsActive),10000);
+        // browser.wait(EC.visibilityOf(this.sliderSlideNotActive),10000);
     };
     this.secondDotPress = function () {
         browser.actions().click(this.sliderDot2).perform();
@@ -122,11 +126,11 @@ let MainPage = function () {
     };
     this.thirdDotPress = function () {
         browser.actions().click(this.sliderDot3).perform();
-        browser.wait(EC.visibilityOf(this.sliderSlideIsActive),3000);
+        browser.wait(EC.visibilityOf(this.sliderSlideIsActive),10000);
     };
     this.fourthDotPress = function () {
         browser.actions().click(this.sliderDot4).perform();
-        browser.wait(EC.visibilityOf(this.sliderSlideIsActive),3000);
+        browser.wait(EC.visibilityOf(this.sliderSlideIsActive),10000);
     };
 
 
